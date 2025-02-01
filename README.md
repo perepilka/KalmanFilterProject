@@ -101,8 +101,9 @@ This ensures that when saving or loading files, the application will point to th
 ---
 
 ## **Contributors**
-- Your Name(s)
-- Project collaborators (if any)
+- Yaroslav Perepilka
+- Maciej Baranowski
+- Julia Pawelczyk
 
 ## **License**
 This project is licensed under the MIT License. Feel free to use, modify, and distribute.
