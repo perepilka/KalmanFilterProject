@@ -1,0 +1,11 @@
+speed: 2.0
+start_height: 700.0
+time_step: 0.05
+flight_time: 100
+Wyniki statystyczne:
+Odchylenie standardowe sygnałów zaszumowanych na pierwszym sensorze: 11.4477384549765
+Odchylenie standardowe sygnałów odfiltrowanych na pierwszym sensorze: 6.520855366256514
+Odchylenie standardowe sygnałów zaszumowanych na drugim sensorze: 11.937413310740983
+Odchylenie standardowe sygnałów odfiltrowanych na drugim sensorze: 7.027170901652649
+Odchylenie standardowe sygnałów odfiltrowanych na połączonych sensorach: 6.520855366256514
+Procentowa redukcja odchylenia standardowego: 43.04%
