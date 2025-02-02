@@ -1,0 +1,12 @@
+speed: 5.0
+start_height: 0.0
+time_step: 0.05
+flight_time: 200
+czyjniki 1 i 2 uszkodzone, mają zakłucenie 25%
+Wyniki statystyczne:
+Odchylenie standardowe sygnałów zaszumowanych na pierwszym sensorze: 54.92741768240083
+Odchylenie standardowe sygnałów odfiltrowanych na pierwszym sensorze: 30.828290192474828
+Odchylenie standardowe sygnałów zaszumowanych na drugim sensorze: 55.12627726386594
+Odchylenie standardowe sygnałów odfiltrowanych na drugim sensorze: 30.934242745659517
+Odchylenie standardowe sygnałów odfiltrowanych na połączonych sensorach: 30.828290192474828
+Procentowa redukcja odchylenia standardowego: 43.87%

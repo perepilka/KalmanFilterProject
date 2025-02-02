@@ -3,7 +3,7 @@ import signalsGeneratingShowing as signals
 import pandas as pd
 import json
 
-def KalmanSimulation(signals_dict: dict, signals_x, signals_y, sensor_id, Q1=4.572, Q2=38.1):
+def KalmanSimulation(signals_dict: dict, signals_x, signals_y, sensor_id, Q1=4.572, Q2=38.1, sensor_damaged=False):
     """
     Przeprowadza pełną symulację filtracji Kalmana dla jednego czujnika
     
@@ -21,7 +21,10 @@ def KalmanSimulation(signals_dict: dict, signals_x, signals_y, sensor_id, Q1=4.5
     kalman_step = 1  # Krok próbkowania dla filtracji
     
     # Generowanie zaszumionych sygnałów
-    noised_signals_y = signals.generate_noised_signals_on_sensor(signals_y)
+    if sensor_damaged:
+        noised_signals_y = signals.generate_noised_signals_on_damaged_sensor(signals_y)
+    else:
+        noised_signals_y = signals.generate_noised_signals_on_sensor(signals_y)
     
     # Pobieranie sygnałów z odpowiednim krokiem
     taked_kalman_signals_x = signals_x[0::kalman_step]

@@ -181,6 +181,7 @@ def show_random():
         signals_x=signals_x, 
         signals_y=signals_y, 
         noised_signals_y=signals.generate_noised_signals_on_sensor(signals_y),
+        # noised_signals_y=noised_signals_y_2,
         taked_kalman_signals_x=signals_x[0::1], 
         y_estimates_kalman=combined_estimates_y, 
         sensor_id="Połączone"

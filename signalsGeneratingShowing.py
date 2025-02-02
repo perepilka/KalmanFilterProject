@@ -25,7 +25,7 @@ def generate_true_signal(signals_dict: dict):
     flight_time = signals_dict.get("flight_time", 600)
 
     max_steps = int(flight_time / time_step)
-    zero_reached = False  # Flaga oznaczająca osiągnięcie zera
+    
     
     for i in range(max_steps):
         current_time = round(time_step * i, 3)
@@ -64,6 +64,25 @@ def generate_noised_signals_on_sensor(signals_y):
         noised_signals_y.append(noised_signal)
 
     return noised_signals_y
+
+
+def generate_noised_signals_on_damaged_sensor(signals_y):
+    noised_signals_y = []
+    radar_noise_under_152_4m = 0.03  # Szum poniżej 152.4 m (3%)
+    radar_noise_higher_152_4m = 0.05  # Szum powyżej 152.4 m (5%)
+
+    for signal in signals_y:
+        if signal <= 152.4:
+            noise = random.uniform(-radar_noise_under_152_4m, radar_noise_under_152_4m)
+        elif 152.4 < signal <= 762:
+            noise = random.uniform(-radar_noise_higher_152_4m, radar_noise_higher_152_4m)
+        else:
+            noise = 0  # Brak szumu powyżej 762 m
+        noised_signal = round(signal + signal * noise, 3)
+        noised_signals_y.append(noised_signal)
+
+    return noised_signals_y
+
 
 def show_signal(signals_x, signals_y, 
                 xlabel="Czas (s)", 
